@@ -1,0 +1,41 @@
+@import "../typography.scss";
+@import "../color.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  font-family: $system-font-family;
+  color: $white;
+}
+
+main {
+  margin: 4em 5em;
+  display: flex;
+}
+
+center-text {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  width: calc(100% - 7em);
+}
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+a:hover {
+  color: $primary-color;
+}

@@ -1,0 +1,99 @@
+// Font Family
+$system-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+// Headings
+@mixin heading-1($color: $white) {
+  font-size: 80px;
+  line-height: 86px;
+  font-weight: bold;
+  color: $color;
+}
+
+@mixin heading-2($color: $white) {
+  font-size: 60px;
+  line-height: 86px;
+  font-weight: bold;
+  color: $color;
+}
+
+@mixin heading-3($color: $white) {
+  font-size: 30px;
+  line-height: 43px;
+  font-weight: bold;
+  color: $color;
+}
+
+@mixin heading-4($color: $white) {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: bold;
+  color: $color;
+}
+
+@mixin anchor-text {
+  font-size: 1.125rem;
+  border-bottom: 2px solid transparent;
+
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  line-height: calc(3.75rem - 0.4rem);
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  top: 0;
+  -webkit-transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+// Body Text
+%large {
+  line-height: 37px;
+  font-size: 24px;
+}
+
+@mixin large-text($color: $white) {
+  @extend %large;
+  color: $color;
+}
+
+@mixin large-text-bold($color: $white) {
+  @extend %large;
+  font-weight: bold;
+  color: $color;
+}
+@mixin list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+%medium {
+  line-height: 31px;
+  font-size: 20px;
+}
+%small {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+@mixin small-text($color: $white) {
+  @extend %small;
+}
+@mixin small-text-bold($color: $white) {
+  @extend %small;
+  font-weight: bold;
+}
+
+@mixin medium-text($color: $white) {
+  @extend %medium;
+  color: $color;
+}
+
+@mixin medium-text-bold($color: $white) {
+  @extend %medium;
+  font-weight: bold;
+  color: $color;
+}

@@ -1,0 +1,68 @@
+@import "../typography.scss";
+@import "../color.scss";
+
+nav {
+  display: flex;
+  font-weight: normal;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1em;
+  background-color: #fff;
+  color: #8d8d8d;
+  text-align: center;
+  margin: 0 auto;
+  padding-left: 10em;
+  padding-right: 7em;
+  height: 100%;
+  position: relative;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.01);
+
+  a {
+    @include anchor-text;
+    color: inherit;
+  }
+
+  .active {
+    font-weight: bold;
+    border-bottom-color: $primary-color;
+    color: #222;
+    svg {
+      color: $primary-color;
+    }
+  }
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+nav ul li:last-child {
+  margin-right: 0;
+  font-weight: bold;
+  color: #222;
+}
+
+.nav-center li {
+  margin-right: 1.2em;
+  margin-left: 1.2em;
+}
+
+nav svg {
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.nav-userprofile {
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
