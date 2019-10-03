@@ -113,7 +113,7 @@ const Messages = () => {
   return (
     <div className="messages-container">
       <article className="user-reply">
-        <p>Hi there, how are you? have watched the news?</p>
+        <p>Hi Juhan, Did you get a chance to see the venue?</p>
         <Img
           fluid={image.sharp.fluid}
           alt="Eduardo Eutra"
@@ -121,7 +121,7 @@ const Messages = () => {
         />
       </article>
       <article className="other-user-reply">
-        <p> hi robin, this seems like a great idea</p>
+        <p> Hi Eduardo, this seems like a great idea 🥳</p>
         <ImageCollage />
         <Img
           fluid={user1.sharp.fluid}
@@ -237,7 +237,7 @@ const Chat = () => {
                 />
                 <span>
                   <h1>Johan Jager</h1>
-                  <p>Hi robin, this seems like a great idea</p>
+                  <p>Hi Eduardo, this seems like a great idea 🥳</p>
                 </span>
               </div>
               <div className="message-details">
