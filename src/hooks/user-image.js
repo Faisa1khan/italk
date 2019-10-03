@@ -38,6 +38,41 @@ const useImage = () => {
           }
         }
       }
+      user1: file(relativePath: { eq: "johan-de-jager.jpeg" }) {
+        sharp: childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      user2: file(relativePath: { eq: "jurien-huggins.jpeg" }) {
+        sharp: childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      user3: file(relativePath: { eq: "oladimeji-odunsi.jpeg" }) {
+        sharp: childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      user4: file(relativePath: { eq: "oleg-ivanov.jpeg" }) {
+        sharp: childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      user5: file(relativePath: { eq: "logan-weaver.jpg" }) {
+        sharp: childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 

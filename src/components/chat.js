@@ -1,53 +1,41 @@
 import { useState } from "react"
 import FsLightbox from "fslightbox-react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+
+import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import {
-  FiUsers,
-  FiMusic,
   FiVideo,
   FiMessageSquare,
   FiVolume2,
   FiImage,
   FiType,
-  FiChevronDown,
-  FiBell,
-  FiInfo,
   FiBarChart2,
   FiPlusCircle,
   FiFilm,
   FiEye,
   FiSend,
   FiMic,
+  FiMaximize2,
 } from "react-icons/fi"
-import PropTypes from "prop-types"
+
 import React from "react"
 import "./chat.scss"
 import userImage from "../hooks/user-image"
 
-const Card = () => {
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "eduardo-dutra.jpg" }) {
-        sharp: childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+const Card = ({ msg, img, name }) => {
+  console.log(img)
+  const { user1 } = userImage()
   return (
     <div className="card">
       <div className="person-details">
         <Img
-          fluid={image.sharp.fluid}
+          fluid={user1.sharp.fluid}
           alt="Eduardo Eutra"
           className="person-profile"
         />
         <span>
-          <h1>Eduardo Eutra</h1>
-          <p>Hi robin, this seems like a great idea</p>
+          <h1>{name}</h1>
+          <p>{msg}</p>
         </span>
       </div>
       <div className="message-details">
@@ -60,6 +48,18 @@ const Card = () => {
       </div>
     </div>
   )
+}
+
+Card.propTypes = {
+  msg: PropTypes.string.isRequired,
+  img: PropTypes.object,
+  name: PropTypes.string.isRequired,
+}
+
+Card.defaultProps = {
+  name: "Eduardo Eutra",
+  msg: "Hi robin, this seems like a great idea",
+  img: `image`,
 }
 
 const ImageCollage = () => {
@@ -108,13 +108,13 @@ const ImageCollage = () => {
 }
 
 const Messages = () => {
-  const { image } = userImage()
+  const { image, user1 } = userImage()
   return (
     <div className="messages-container">
       <article className="user-reply">
         <p>Hi there, how are you? have watched the news?</p>
         <Img
-          fluid={image.sharp.fluid}
+          fluid={user1.sharp.fluid}
           alt="Eduardo Eutra"
           className="messgae-profile"
         />
@@ -198,15 +198,16 @@ class Conversation extends React.Component {
 }
 
 const Chat = () => {
+  const { user1, user2, user3, user4, user5 } = userImage()
   return (
     <div className="chat">
       <ul className="chat-heading">
         <li>
-          <FiMessageSquare />
+          <FiMessageSquare color={"f87c7c"} />
           Messages
         </li>
         <li>
-          <FiVideo />
+          <FiMaximize2 color={"#a7a7a7"} />
         </li>
       </ul>
       <section className="chat-items">
@@ -218,11 +219,123 @@ const Chat = () => {
             </ul>
           </header>
           <div className="all-messages">
-            <Card className="recent-message" />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <div className="card">
+              <div className="person-details">
+                <Img
+                  fluid={user1.sharp.fluid}
+                  alt="Eduardo Eutra"
+                  className="person-profile"
+                />
+                <span>
+                  <h1>Johan Jager</h1>
+                  <p>Hi robin, this seems like a great idea</p>
+                </span>
+              </div>
+              <div className="message-details">
+                <ul>
+                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>
+                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
+                    290/300
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="card">
+              <div className="person-details">
+                <Img
+                  fluid={user2.sharp.fluid}
+                  alt="Eduardo Eutra"
+                  className="person-profile"
+                />
+                <span>
+                  <h1>Jurien Huggins</h1>
+                  <p>Thanks, how about an icecream</p>
+                </span>
+              </div>
+              <div className="message-details">
+                <ul>
+                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>
+                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
+                    290/300
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="card">
+              <div className="person-details">
+                <Img
+                  fluid={user3.sharp.fluid}
+                  alt="Eduardo Eutra"
+                  className="person-profile"
+                />
+                <span>
+                  <h1>Oladimeji Odunsi</h1>
+                  <p>Hi, how are you doing</p>
+                </span>
+              </div>
+              <div className="message-details">
+                <ul>
+                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>
+                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
+                    290/300
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="card">
+              <div className="person-details">
+                <Img
+                  fluid={user4.sharp.fluid}
+                  alt="Eduardo Eutra"
+                  className="person-profile"
+                />
+                <span>
+                  <h1>Oleg Ivanov</h1>
+                  <p>Have you checked the mail</p>
+                </span>
+              </div>
+              <div className="message-details">
+                <ul>
+                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>
+                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
+                    290/300
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="card">
+              <div className="person-details">
+                <Img
+                  fluid={user5.sharp.fluid}
+                  alt="Eduardo Eutra"
+                  className="person-profile"
+                />
+                <span>
+                  <h1>Logan Weaver</h1>
+                  <p>What about lasy night?</p>
+                </span>
+              </div>
+              <div className="message-details">
+                <ul>
+                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>
+                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
+                    290/300
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {/* 
+            <Card name="Johan Jager" img={user1} />
+            <Card msg="Thanks, how about an icecream" name="Jurien Huggins" />
+            <Card msg="Hi, how are you doing" name="Oladimeji Odunsi" />
+
+            <Card msg="Have you checked the mail?" name="Oleg Ivanov" />
+            <Card msg="What in dinner?" name="Logan Weaver" /> */}
           </div>
         </article>
 

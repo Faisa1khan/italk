@@ -145,7 +145,7 @@
       display: flex;
       p {
         padding: 1em;
-        max-width: 250px;
+        max-width: 270px;
         line-height: 1.5;
         background: #ffe4e459;
         border-radius: 20px;
@@ -169,8 +169,8 @@
         margin: 1em 2em;
       }
       .messgae-profile {
-        top: -40px;
-        left: -12px;
+        top: -30px;
+        left: -14px;
         position: absolute;
         align-self: flex-start;
       }
@@ -240,17 +240,18 @@
 
 .message-images {
   display: flex;
-  img {
-    border-radius: 5px;
-  }
+
   .large-images {
     margin: 1em 0.5em 0.5em 2em;
     height: 200px;
     width: 300px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
   }
   .small-images {
     margin: 1em 0;
     height: 40px;
     width: 80px;
+    border-radius: 10px;
   }
 }

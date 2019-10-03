@@ -14,7 +14,7 @@ nav {
   margin: 0 auto;
   padding-left: 10em;
   padding-right: 7em;
-  height: 100%;
+
   position: relative;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.01);
 
@@ -46,8 +46,6 @@ nav ul li {
 }
 nav ul li:last-child {
   margin-right: 0;
-  font-weight: bold;
-  color: #222;
 }
 
 .nav-center li {

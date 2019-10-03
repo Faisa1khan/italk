@@ -1,15 +1,6 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import {
-  FiUsers,
-  FiMusic,
-  FiVideo,
-  FiMessageSquare,
-  FiChevronDown,
-  FiBell,
-  FiInfo,
-} from "react-icons/fi"
-import PropTypes from "prop-types"
+import { FiUsers, FiVideo, FiMessageSquare } from "react-icons/fi"
 import React from "react"
 import "./sidebar.scss"
 
