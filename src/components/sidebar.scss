@@ -60,3 +60,12 @@
     background: $primary-color;
   }
 }
+
+.sublinks {
+  li {
+    cursor: pointer;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

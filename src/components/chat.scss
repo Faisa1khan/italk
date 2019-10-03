@@ -116,7 +116,11 @@
       text-transform: uppercase;
 
       li {
+        cursor: pointer;
         padding: 1em;
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
@@ -240,6 +244,9 @@
 
 .message-images {
   display: flex;
+  img:hover {
+    opacity: 0.5;
+  }
 
   .large-images {
     margin: 1em 0.5em 0.5em 2em;

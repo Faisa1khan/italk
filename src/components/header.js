@@ -62,7 +62,7 @@ const Header = () => {
               className="nav-userprofile"
             />
           </li>
-          <li>
+          <li className="username">
             Eduardo Eutra <FiChevronDown />
           </li>
         </ul>

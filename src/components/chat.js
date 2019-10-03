@@ -16,6 +16,7 @@ import {
   FiSend,
   FiMic,
   FiMaximize2,
+  FiXCircle,
 } from "react-icons/fi"
 
 import React from "react"
@@ -114,7 +115,7 @@ const Messages = () => {
       <article className="user-reply">
         <p>Hi there, how are you? have watched the news?</p>
         <Img
-          fluid={user1.sharp.fluid}
+          fluid={image.sharp.fluid}
           alt="Eduardo Eutra"
           className="messgae-profile"
         />
@@ -123,7 +124,7 @@ const Messages = () => {
         <p> hi robin, this seems like a great idea</p>
         <ImageCollage />
         <Img
-          fluid={image.sharp.fluid}
+          fluid={user1.sharp.fluid}
           alt="Eduardo Eutra"
           className="messgae-profile"
         />
@@ -181,11 +182,19 @@ class Conversation extends React.Component {
               </header>
             </div>
           )}
-          <FiPlusCircle
-            color="#fb7b7b"
-            size={40}
-            onClick={() => this.setState({ hidden: !this.state.hidden })}
-          />
+          {hidden === true ? (
+            <FiPlusCircle
+              color="#fb7b7b"
+              size={40}
+              onClick={() => this.setState({ hidden: !this.state.hidden })}
+            />
+          ) : (
+            <FiXCircle
+              color="#fb7b7b"
+              size={40}
+              onClick={() => this.setState({ hidden: !this.state.hidden })}
+            />
+          )}
           <input />
           <button>
             <FiSend />
@@ -255,10 +264,10 @@ const Chat = () => {
               </div>
               <div className="message-details">
                 <ul>
-                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>19 June, 2018 | 03:39pm</li>
                   <li>
-                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
-                    290/300
+                    <FiEye color={"green"} /> 12 Replies | <FiBarChart2 />{" "}
+                    50/100
                   </li>
                 </ul>
               </div>
@@ -277,10 +286,9 @@ const Chat = () => {
               </div>
               <div className="message-details">
                 <ul>
-                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>18 June, 2018 | 09:40pm</li>
                   <li>
-                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
-                    290/300
+                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 /> 20/30
                   </li>
                 </ul>
               </div>
@@ -299,10 +307,10 @@ const Chat = () => {
               </div>
               <div className="message-details">
                 <ul>
-                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>18 June, 2018 | 05:49pm</li>
                   <li>
-                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
-                    290/300
+                    <FiEye color={"green"} /> 17 Replies | <FiBarChart2 />{" "}
+                    90/100
                   </li>
                 </ul>
               </div>
@@ -321,10 +329,9 @@ const Chat = () => {
               </div>
               <div className="message-details">
                 <ul>
-                  <li>19 June, 2018 | 03:49pm</li>
+                  <li>17 June, 2018 | 03:19pm</li>
                   <li>
-                    <FiEye color={"green"} /> 20 Replies | <FiBarChart2 />{" "}
-                    290/300
+                    <FiEye color={"green"} /> 15 Replies | <FiBarChart2 /> 29/30
                   </li>
                 </ul>
               </div>

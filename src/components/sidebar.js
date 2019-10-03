@@ -30,7 +30,7 @@ const Sidebar = () => {
           <Link to="/" activeClassName="currentBar">
             <FiMessageSquare /> Messages
           </Link>
-          <ul>
+          <ul className="sublinks">
             <li>Chats</li>
             <li>Send Message</li>
           </ul>
@@ -39,7 +39,7 @@ const Sidebar = () => {
           <Link to="/group" activeClassName="currentBar">
             <FiUsers /> Group
           </Link>
-          <ul>
+          <ul className="sublinks">
             <li>History</li>
             <li>Create Group</li>
           </ul>
@@ -49,7 +49,7 @@ const Sidebar = () => {
           <Link to="/video" activeClassName="currentBar">
             <FiVideo /> Video Calls
           </Link>
-          <ul>
+          <ul className="sublinks">
             <li>History</li>
             <li>Calls</li>
           </ul>
